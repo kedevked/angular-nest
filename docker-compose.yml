@@ -9,9 +9,15 @@ services:
     environment:
       NODE_ENV: production
       # PORT: 3333
-    ports: 
+    ports:
       - 3333:3333
     # command: nx serve backend
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+  mongodb:
+      image: mongo:latest
+      environment:
+        - MONGODB_DATABASE="test"
+      ports:
+        - 27017:27017

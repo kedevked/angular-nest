@@ -8,13 +8,15 @@ import { AngularUniversalModule } from '@nestjs/ng-universal';
 import { AppServerModule } from '../../../frontend/server';
 import { FrontendMiddleware } from './middlewares/frontend.middleware';
 import { ApiController } from './api/api.controller';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
     AngularUniversalModule.forRoot({
       bootstrap: AppServerModule,
       viewsPath: join(process.cwd(), 'dist/frontend/browser')
-    })
+    }),
+  MongooseModule.forRoot('mongodb://localhost/nest')
   ],
   controllers: [AppController, ApiController],
   providers: [AppService],
