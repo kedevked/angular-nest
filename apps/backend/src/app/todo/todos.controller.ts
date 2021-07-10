@@ -3,7 +3,7 @@ import { TodosService } from './todos.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { Todo } from './schemas/todo.schema';
 
-@Controller('cats')
+@Controller('api/todo')
 export class TodosController {
   constructor(private readonly todosService: TodosService) {}
 

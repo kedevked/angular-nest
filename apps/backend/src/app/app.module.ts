@@ -9,6 +9,8 @@ import { AppServerModule } from '../../../frontend/server';
 import { FrontendMiddleware } from './middlewares/frontend.middleware';
 import { ApiController } from './api/api.controller';
 import { MongooseModule } from '@nestjs/mongoose';
+import { TodoModule } from './todo/todo.module';
+import { TodosController } from './todo/todos.controller';
 
 @Module({
   imports: [
@@ -16,7 +18,8 @@ import { MongooseModule } from '@nestjs/mongoose';
       bootstrap: AppServerModule,
       viewsPath: join(process.cwd(), 'dist/frontend/browser')
     }),
-  MongooseModule.forRoot('mongodb://localhost/nest')
+  MongooseModule.forRoot('mongodb://db:27017/nest'),
+  TodoModule
   ],
   controllers: [AppController, ApiController],
   providers: [AppService],

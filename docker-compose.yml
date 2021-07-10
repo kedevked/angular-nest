@@ -15,7 +15,7 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-  mongodb:
+  db:
       image: mongo:latest
       environment:
         - MONGODB_DATABASE="test"
