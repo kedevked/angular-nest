@@ -16,4 +16,8 @@ export class TodosService {
   async findAll(): Promise<Todo[]> {
     return this.TodoModel.find().exec();
   }
+
+  async find(id: string) {
+    return this.TodoModel.findById(id).exec();
+  }
 }
