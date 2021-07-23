@@ -22,10 +22,11 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoComponent } from './todo/todo.component';
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import { MatDividerModule } from '@angular/material/divider';
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, DashboardComponent, TodoListComponent, TodoComponent],
+  declarations: [AppComponent, NavigationComponent, DashboardComponent, TodoListComponent, TodoComponent, EditTodoComponent],
   imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule,
      MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, 

@@ -13,4 +13,5 @@ export interface Todo {
 export class TodoComponent {
 
   @Input()todo: Todo;
+
 }

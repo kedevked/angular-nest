@@ -5,16 +5,16 @@
     <mat-card-content>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Add todo</mat-label>
-            <input matInput placeholder="todo description">
+            <input matInput placeholder="todo description" #addTodoInput>
           </mat-form-field>
 
-          <button mat-raised-button color="primary" class="todo-add-button" (click)="addTodo(addTodoButton.value)" #addTodoButton>Add todo</button>
+          <button mat-raised-button color="primary" class="todo-add-button" (click)="addTodo(addTodoInput.value)" >Add todo</button>
         <mat-list>
             <mat-list-item class="row-todo" *ngFor="let todo of todos">
                 <youtube-poly-vs-mono-todo class="todo-item" [todo]="todo"></youtube-poly-vs-mono-todo>
                 <div class="todo-actions">
                     <button matInput mat-raised-button class="todo-delete">Delete</button>
-                    <button maInput mat-raised-button color="primary" class="todo-edit">Edit</button>
+                    <button maInput mat-raised-button color="primary" class="todo-edit" (click)="editTodo(todo)">Edit</button>
                 </div>
                 <mat-divider></mat-divider>
             </mat-list-item >

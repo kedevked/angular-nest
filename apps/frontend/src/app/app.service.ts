@@ -8,19 +8,19 @@ import { Todo } from './todo/todo.component';
 })
 export class AppService {
   getTodoList(): Observable<Todo[]> {
-    return this.http.get<Todo[]>('./todos');
+    return this.http.get<Todo[]>('./api/todos');
   }
   deleteTodo(arg0: { isDone: boolean; id: number; text: string; notes: string; date: string | Date; }): Observable<any> {
     throw new Error('Method not implemented.');
   }
   postTodo(todo: Partial<Todo>): Observable<any>  {
-    return this.http.post('./todo', todo);
+    return this.http.post('./api/todos', todo);
   }
   updateTodo(arg0: any): Observable<any> {
     throw new Error('Method not implemented.');
   }
-  getTodo(todoId: string):Observable<any> {
-    throw new Error('Method not implemented.');
+  getTodo(todoId: string):Observable<Todo> {
+    return this.http.get<Todo>(`./api/todos/${todoId}`);
   }
 
   constructor(private http: HttpClient) { }

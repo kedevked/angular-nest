@@ -3,7 +3,7 @@ import { TodosService } from './todos.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { Todo } from './schemas/todo.schema';
 
-@Controller('api/todo')
+@Controller({path: 'api/todos'})
 export class TodosController {
   constructor(private readonly todosService: TodosService) {}
 
@@ -12,7 +12,7 @@ export class TodosController {
     await this.todosService.create(createTodoDto);
   }
 
-  @Get('s')
+  @Get()
   async findAll(): Promise<Todo[]> {
     return this.todosService.findAll();
   }
