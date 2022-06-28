@@ -10,8 +10,8 @@ export class AppService {
   getTodoList(): Observable<Todo[]> {
     return this.http.get<Todo[]>('./api/todos');
   }
-  deleteTodo(arg0: { isDone: boolean; id: number; text: string; notes: string; date: string | Date; }): Observable<any> {
-    throw new Error('Method not implemented.');
+  deleteTodo(todo: Todo): Observable<any> {
+    return this.http.delete(`api/todos/${todo.id}`);
   }
   postTodo(todo: Partial<Todo>): Observable<any>  {
     return this.http.post('./api/todos', todo);

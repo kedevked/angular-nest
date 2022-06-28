@@ -13,7 +13,7 @@
             <mat-list-item class="row-todo" *ngFor="let todo of todos">
                 <youtube-poly-vs-mono-todo class="todo-item" [todo]="todo"></youtube-poly-vs-mono-todo>
                 <div class="todo-actions">
-                    <button matInput mat-raised-button class="todo-delete">Delete</button>
+                    <button matInput mat-raised-button class="todo-delete" (click)="deleteTodo(todo)">Delete</button>
                     <button maInput mat-raised-button color="primary" class="todo-edit" (click)="editTodo(todo)">Edit</button>
                 </div>
                 <mat-divider></mat-divider>

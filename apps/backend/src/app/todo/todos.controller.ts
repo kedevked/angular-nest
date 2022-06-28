@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { TodosService } from './todos.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { Todo } from './schemas/todo.schema';
@@ -20,5 +20,11 @@ export class TodosController {
   @Get('/:id')
   async find(@Param('id') id: string){
     return this.todosService.find(id);
+  }
+
+  @Delete('/:id')
+  async delete(@Param('id') id: string) {
+    console.log('backend delete', id);
+    return this.todosService.delete(id);
   }
 }
