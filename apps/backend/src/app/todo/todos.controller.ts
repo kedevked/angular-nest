@@ -1,9 +1,9 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { TodosService } from './todos.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { Todo } from './schemas/todo.schema';
 
-@Controller('api/todo')
+@Controller({path: 'api/todos'})
 export class TodosController {
   constructor(private readonly todosService: TodosService) {}
 
@@ -15,5 +15,16 @@ export class TodosController {
   @Get()
   async findAll(): Promise<Todo[]> {
     return this.todosService.findAll();
+  }
+
+  @Get('/:id')
+  async find(@Param('id') id: string){
+    return this.todosService.find(id);
+  }
+
+  @Delete('/:id')
+  async delete(@Param('id') id: string) {
+    console.log('backend delete', id);
+    return this.todosService.delete(id);
   }
 }

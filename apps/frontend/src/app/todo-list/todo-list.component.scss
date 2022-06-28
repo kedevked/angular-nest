@@ -1,0 +1,26 @@
+.row-todo {
+    margin-bottom: 16px;
+
+    .todo-item {
+        flex: 1;
+    }
+}
+
+.todo-actions {
+    flex: 0;
+    display: inline-flex;
+}
+
+.todo-delete {
+    margin-right: 16px;
+}
+
+.card-todo-list {
+    width: 80%;
+    margin: auto;
+    margin-top: 32px;
+}
+
+.todo-add-button {
+    margin-left: 16px;
+}

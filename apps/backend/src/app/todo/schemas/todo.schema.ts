@@ -10,3 +10,9 @@ export class Todo {
 }
 
 export const TodoSchema = SchemaFactory.createForClass(Todo);
+
+TodoSchema.set('toJSON', {
+  virtuals: true,
+  transform: function (_doc: TodoDocument, ret: TodoDocument) {
+    delete ret._id; delete ret.__v  }
+});
